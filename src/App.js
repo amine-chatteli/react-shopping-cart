@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import './App.css';
 import Banner from './Banner';
-import Product from './Product';
+import ProductList from './ProductList'
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
      <Navbar />
      <Banner />
-     <Product />
+     <ProductList />
     </div>
   );
 }

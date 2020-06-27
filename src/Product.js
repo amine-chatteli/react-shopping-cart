@@ -2,8 +2,14 @@ import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './Product.css';
-import image from './product-1.jpeg';
+import './product-1.jpeg'
 const Product=(props)=>{
+    let id=props.id;
+    let title=props.title;
+    let price=props.price;
+    let image=props.image;
+    console.log(image);
+    
 
 return(
 <article className="product">
@@ -19,8 +25,8 @@ return(
                 add to bag
               </button>
             </div>
-            <h3>queen bed</h3>
-            <h4>$16</h4>
+            <h3>{title}</h3>
+            <h4>{price}$</h4>
           </article>
 )
 
