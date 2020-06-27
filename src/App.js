@@ -3,6 +3,8 @@ import Navbar from './Navbar';
 import './App.css';
 import Banner from './Banner';
 import ProductList from './ProductList'
+import Cart from './Cart'
+
 
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
      <Navbar />
      <Banner />
      <ProductList />
+     <Cart />
     </div>
   );
 }
