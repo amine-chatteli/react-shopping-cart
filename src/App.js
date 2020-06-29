@@ -52,18 +52,18 @@ class App extends Component {
       cart,
       cartVisibility: true
     });
-
+      this.totalItems(cart)
   }
   handleIncreaseQuantity(id) {
     let cart = [...this.state.cart];
     cart.find(element => element.id === id).quantity++;
-    this.setState({ cart })
+    this.totalItems(cart)
   }
   handleDecreaseQuantity(id) {
     let cart = [...this.state.cart];
     if (cart.find(element => element.id === id).quantity > 1) {
       cart.find(element => element.id === id).quantity--;
-      this.setState({ cart });
+      this.totalItems(cart)
     } else {
       this.handleRemoveItem(id);
     }
@@ -74,6 +74,16 @@ class App extends Component {
     let item = this.state.items[id]
     item.quantity = 0;
     this.setState({ cart, items });
+    this.totalItems(this.state.cart);
+  }
+  totalItems(cart){
+    let totalItems=0;
+    cart.forEach(item=>{
+      totalItems+=item.quantity
+     this.setState({totalItems})
+      
+    })
+
   }
   render() {
     let { totalItems } = this.state
