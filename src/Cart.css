@@ -7,9 +7,9 @@
     background: transparent;
     transition: var(--mainTransition);
     z-index: 2;
-    visibility: hidden;
-}
-.cart {
+    visibility:hidden;
+  }
+  .cart {
     position: fixed;
     top: 0;
     right: 0;
@@ -21,30 +21,36 @@
     background: rgb(231, 226, 221);
     padding: 1.5rem;
     transition: var(--mainTransition);
-    transform: translateX(70%);
+    transform: translateX(100%);
+  }
+  .showCart {
+    transform: translateX(0);
+  }
+  .transparentBcg {
+    visibility: visible;
   }
   @media screen and (min-width: 768px) {
     .cart {
-      width: 80vw;
+      width: 30vw;
       min-width: 450px;
     }
   }
+  
   .close-cart {
     font-size: 1.7rem;
     cursor: pointer;
   }
   .cart h2 {
-      margin-left: 80px;
     text-transform: capitalize;
-    text-align: left;
+    text-align: center;
     letter-spacing: var(--mainSpacing);
     margin-bottom: 2rem;
   }
+    
   .cart-footer {
     margin-top: 2rem;
     letter-spacing: var(--mainSpacing);
-    text-align: left;
-    margin-left: 60px;
+    text-align: center;
   }
   .cart-footer h3 {
     text-transform: capitalize;

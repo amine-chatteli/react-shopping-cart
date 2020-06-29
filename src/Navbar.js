@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 
-const Navbar=()=>{
+const Navbar=(props)=>{
 
     return(
         <nav className="navbar">
@@ -14,7 +14,7 @@ const Navbar=()=>{
             <i className="fas fa-bars"></i>
           </span>
           <img src={logo} alt="store logo" />
-          <div className="cart-btn">
+          <div className="cart-btn" onClick={props.onShowCart}>
             <span className="nav-icon">
               <i className="fas fa-cart-plus"></i>
             </span>
