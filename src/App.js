@@ -16,14 +16,16 @@ class App extends Component {
       cartVisibility: false,
       items: [],
       cart: [],
-      totalItems: 0
+      totalItems: 0,
+      totalPrice:0
     }
     this.handleShowCart = this.handleShowCart.bind(this);
     this.handleCloseCart = this.handleCloseCart.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.handleIncreaseQuantity = this.handleIncreaseQuantity.bind(this);
     this.handleDecreaseQuantity = this.handleDecreaseQuantity.bind(this);
-    this.handleRemoveItem = this.handleRemoveItem.bind(this)
+    this.handleRemoveItem = this.handleRemoveItem.bind(this);
+    this.handleClearCart=this.handleClearCart.bind(this);
   }
 
   componentDidMount() {
@@ -78,18 +80,32 @@ class App extends Component {
   }
   totalItems(cart){
     let totalItems=0;
+    let totalPrice=0;
     cart.forEach(item=>{
       totalItems+=item.quantity
-     this.setState({totalItems})
+      totalPrice+=(item.price*item.quantity);
+     this.setState({totalItems,totalPrice})
       
     })
 
+  }
+  handleClearCart(){
+    let items=[...this.state.items];
+    items.forEach(item=>{
+      item.quantity=0
+    })
+    this.setState({items,
+      cart:[],
+      totalItems:0,
+      totalPrice:0
+    })
   }
   render() {
     let { totalItems } = this.state
     let { cart } = this.state
     let { items } = this.state;
     let { cartVisibility } = this.state;
+    let {totalPrice}=this.state;
     return (
       <div className="App">
         <Navbar onShowCart={this.handleShowCart} totalItems={totalItems} />
@@ -97,7 +113,8 @@ class App extends Component {
         <ProductList items={items} onAddToCart={this.handleAddToCart} />
         <Cart cartVisibility={cartVisibility} onCloseCart={this.handleCloseCart}
           cart={cart} onIncreaseQuantity={this.handleIncreaseQuantity}
-          onDecreaseQuantity={this.handleDecreaseQuantity} onRemoveItem={this.handleRemoveItem} />
+          onDecreaseQuantity={this.handleDecreaseQuantity} onRemoveItem={this.handleRemoveItem} 
+          onClearCart={this.handleClearCart} totalPrice={totalPrice}/>
       </div>
     );
   }

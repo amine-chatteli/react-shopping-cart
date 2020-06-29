@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './Product.css';
-import './product-1.jpeg'
+
 const Product = (props) => {
     let id = props.id;
     let title = props.title;
@@ -10,13 +10,14 @@ const Product = (props) => {
     let image = props.image;
     let quantity=props.quantity
 
+console.log(image);
 
     
     return (
         <article className="product">
             <div className="img-container">
                 <img
-                    src={image}
+                   src={require(`./${image}`)}
                     alt="product"
                     className="product-img"
                 />

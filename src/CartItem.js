@@ -7,7 +7,7 @@ const CartItem = (props) => {
 
     return (
         <div className="cart-item">
-            <img src={props.image} alt="product" />
+            <img src={require(`./${props.image}`)} alt="product" />
             <div>
                 <h4>{props.title}</h4>
                  <h5>${props.price}</h5>

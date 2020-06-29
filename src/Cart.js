@@ -26,8 +26,8 @@ class Cart extends Component {
                   {output}
             </div>
             <div className="cart-footer">
-              <h3>your total : $<span className="cart-total">0</span></h3>
-              <button className="clear-cart banner-btn">clear cart</button>
+        <h3>your total : $<span className="cart-total">{this.props.totalPrice}</span></h3>
+              <button className="clear-cart banner-btn" onClick={this.props.onClearCart}>clear cart</button>
             </div>
           </div>
         </div>
