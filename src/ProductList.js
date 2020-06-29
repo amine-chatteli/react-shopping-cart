@@ -1,30 +1,14 @@
 import React, { Component } from 'react';
-import products from './products.json'
 import Product from './Product'
 
 class ProductList extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            items: []
-        }
-    }
-    componentDidMount() {
-        let items = products.items.map((item) => {
-            let id = item.sys.id
-            let title = item.fields.title;
-            let price = item.fields.price;
-            let image = item.fields.image.fields.file.url
-            return { id, title, price, image }
-        });
-        this.setState({ items })
-    }
 
     render() {
-        let { items } = this.state
+        let { items } = this.props
         let outputProducts = items.map(item => {
             return (
-                <Product key={item.id} id={item.id} title={item.title} price={item.price} image={item.image} />
+                <Product key={item.id} id={item.id} title={item.title} 
+                price={item.price} image={item.image} onAddToCart={this.props.onAddToCart} quantity={item.quantity} />
             )
         })
 

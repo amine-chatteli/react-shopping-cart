@@ -35,6 +35,7 @@
     transform: translateX(101%);
     cursor: pointer;
   }
+  
   .bag-btn:hover {
     color: var(--mainWhite);
   }

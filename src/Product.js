@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './Product.css';
@@ -8,9 +8,10 @@ const Product = (props) => {
     let title = props.title;
     let price = props.price;
     let image = props.image;
-    console.log(image);
+    let quantity=props.quantity
 
 
+    
     return (
         <article className="product">
             <div className="img-container">
@@ -19,7 +20,7 @@ const Product = (props) => {
                     alt="product"
                     className="product-img"
                 />
-                <button className="bag-btn" data-id="1">
+                <button disabled={quantity>0?true:false} className="bag-btn" data-id={id} onClick={()=>{props.onAddToCart(id)}}>
                     <i className="fas fa-shopping-cart"></i>
                 add to bag
               </button>

@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React from 'react';
 import './Banner.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';

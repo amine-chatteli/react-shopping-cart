@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './CartItem.css'
@@ -6,19 +6,19 @@ import './CartItem.css'
 const CartItem = (props) => {
 
     return (
-        <div class="cart-item">
-            <img src="./images/product-1.jpeg" alt="product" />
+        <div className="cart-item">
+            <img src={props.image} alt="product" />
             <div>
-                <h4>queen bed</h4>
-                <h5>$9.00</h5>
-                <span class="remove-item">remove</span>
+                <h4>{props.title}</h4>
+                 <h5>${props.price}</h5>
+                <span className="remove-item">remove</span>
             </div>
             <div>
-                <i class="fas fa-chevron-up"></i>
-                <p class="item-amount">
-                    1
+                <i className="fas fa-chevron-up" onClick={()=>props.onIncreaseQuantity(props.id)}></i>
+                <p className="item-amount">
+                    {props.quantity}
               </p>
-                <i class="fas fa-chevron-down"></i>
+                <i className="fas fa-chevron-down"></i>
             </div>
         </div>
     )
