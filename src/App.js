@@ -16,12 +16,14 @@ class App extends Component {
       cartVisibility: false,
       items: [],
       cart: [],
+      totalItems: 0
     }
     this.handleShowCart = this.handleShowCart.bind(this);
     this.handleCloseCart = this.handleCloseCart.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.handleIncreaseQuantity = this.handleIncreaseQuantity.bind(this);
-
+    this.handleDecreaseQuantity = this.handleDecreaseQuantity.bind(this);
+    this.handleRemoveItem = this.handleRemoveItem.bind(this)
   }
 
   componentDidMount() {
@@ -30,7 +32,7 @@ class App extends Component {
       let title = item.fields.title;
       let price = item.fields.price;
       let image = item.fields.image.fields.file.url
-      return { id, title, price, image,quantity:0 }
+      return { id, title, price, image, quantity: 0 }
     });
     this.setState({ items })
   }
@@ -43,28 +45,49 @@ class App extends Component {
   }
   handleAddToCart(id) {
     let cart = [...this.state.cart];
-    let item=this.state.items[id]
+    let item = this.state.items[id]
     item.quantity++;
     cart.push(item)
-    this.setState({ cart ,
-    cartVisibility:true})
-  }
-  handleIncreaseQuantity(id){
-console.log('hi',id);
+    this.setState({
+      cart,
+      cartVisibility: true
+    });
 
   }
-
+  handleIncreaseQuantity(id) {
+    let cart = [...this.state.cart];
+    cart.find(element => element.id === id).quantity++;
+    this.setState({ cart })
+  }
+  handleDecreaseQuantity(id) {
+    let cart = [...this.state.cart];
+    if (cart.find(element => element.id === id).quantity > 1) {
+      cart.find(element => element.id === id).quantity--;
+      this.setState({ cart });
+    } else {
+      this.handleRemoveItem(id);
+    }
+  }
+  handleRemoveItem(id) {
+    let cart = this.state.cart.filter(item => item.id !== id);
+    let items = [...this.state.items];
+    let item = this.state.items[id]
+    item.quantity = 0;
+    this.setState({ cart, items });
+  }
   render() {
-    let {cart}=this.state
+    let { totalItems } = this.state
+    let { cart } = this.state
     let { items } = this.state;
     let { cartVisibility } = this.state;
     return (
       <div className="App">
-        <Navbar onShowCart={this.handleShowCart} />
+        <Navbar onShowCart={this.handleShowCart} totalItems={totalItems} />
         <Banner />
         <ProductList items={items} onAddToCart={this.handleAddToCart} />
         <Cart cartVisibility={cartVisibility} onCloseCart={this.handleCloseCart}
-         cart={cart} onIncreaseQuantity={this.handleIncreaseQuantity}/>
+          cart={cart} onIncreaseQuantity={this.handleIncreaseQuantity}
+          onDecreaseQuantity={this.handleDecreaseQuantity} onRemoveItem={this.handleRemoveItem} />
       </div>
     );
   }

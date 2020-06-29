@@ -18,7 +18,7 @@ const Navbar=(props)=>{
             <span className="nav-icon">
               <i className="fas fa-cart-plus"></i>
             </span>
-            <div className="cart-items">0</div>
+    <div className="cart-items">{props.totalItems}</div>
           </div>
         </div>
       </nav>

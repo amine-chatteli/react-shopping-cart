@@ -13,7 +13,8 @@ class Cart extends Component {
         return(
           <CartItem  key ={cartItem.id} id={cartItem.id} title={cartItem.title} 
           price={cartItem.price} image={cartItem.image} quantity={cartItem.quantity}
-          onIncreaseQuantity={this.props.onIncreaseQuantity}/>
+          onIncreaseQuantity={this.props.onIncreaseQuantity} 
+           onDecreaseQuantity={this.props.onDecreaseQuantity} onRemoveItem={this.props.onRemoveItem}/>
         )
       })
         return (
