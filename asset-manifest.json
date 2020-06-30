@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/react-shopping-cart/static/css/main.6a80d489.chunk.css",
+    "main.js": "/react-shopping-cart/static/js/main.9eb802bd.chunk.js",
+    "main.js.map": "/react-shopping-cart/static/js/main.9eb802bd.chunk.js.map",
+    "runtime-main.js": "/react-shopping-cart/static/js/runtime-main.1c73a014.js",
+    "runtime-main.js.map": "/react-shopping-cart/static/js/runtime-main.1c73a014.js.map",
+    "static/css/2.3a18d4ee.chunk.css": "/react-shopping-cart/static/css/2.3a18d4ee.chunk.css",
+    "static/js/2.1c477906.chunk.js": "/react-shopping-cart/static/js/2.1c477906.chunk.js",
+    "static/js/2.1c477906.chunk.js.map": "/react-shopping-cart/static/js/2.1c477906.chunk.js.map",
+    "index.html": "/react-shopping-cart/index.html",
+    "precache-manifest.9f39cef6e489586585d1fa5d7e3c6524.js": "/react-shopping-cart/precache-manifest.9f39cef6e489586585d1fa5d7e3c6524.js",
+    "service-worker.js": "/react-shopping-cart/service-worker.js",
+    "static/css/2.3a18d4ee.chunk.css.map": "/react-shopping-cart/static/css/2.3a18d4ee.chunk.css.map",
+    "static/css/main.6a80d489.chunk.css.map": "/react-shopping-cart/static/css/main.6a80d489.chunk.css.map",
+    "static/js/2.1c477906.chunk.js.LICENSE.txt": "/react-shopping-cart/static/js/2.1c477906.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/react-shopping-cart/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/hero-bcg.jpeg": "/react-shopping-cart/static/media/hero-bcg.bb83d2d7.jpeg",
+    "static/media/logo.svg": "/react-shopping-cart/static/media/logo.6ba322fd.svg",
+    "static/media/product-1.jpeg": "/react-shopping-cart/static/media/product-1.23d0ef2f.jpeg",
+    "static/media/product-2.jpeg": "/react-shopping-cart/static/media/product-2.03e5f8d5.jpeg",
+    "static/media/product-3.jpeg": "/react-shopping-cart/static/media/product-3.ca5d8437.jpeg",
+    "static/media/product-4.jpeg": "/react-shopping-cart/static/media/product-4.6a3db9a7.jpeg",
+    "static/media/product-5.jpeg": "/react-shopping-cart/static/media/product-5.feebeceb.jpeg",
+    "static/media/product-6.jpeg": "/react-shopping-cart/static/media/product-6.2bba37fd.jpeg",
+    "static/media/product-7.jpeg": "/react-shopping-cart/static/media/product-7.39e5f207.jpeg",
+    "static/media/product-8.jpeg": "/react-shopping-cart/static/media/product-8.ae2168b8.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c73a014.js",
+    "static/css/2.3a18d4ee.chunk.css",
+    "static/js/2.1c477906.chunk.js",
+    "static/css/main.6a80d489.chunk.css",
+    "static/js/main.9eb802bd.chunk.js"
+  ]
+}
